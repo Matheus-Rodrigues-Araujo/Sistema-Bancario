@@ -31,7 +31,7 @@ Nele, foram utilizados os conceitos de abstração, herança, polimorfismo e enc
 ##### Globalmente
 
 <code>
-     npm install -g digitado
+     npm install -g typescript
 </code>
 
 ### Instalando o pacote ts-node:
