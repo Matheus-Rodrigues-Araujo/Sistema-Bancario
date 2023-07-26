@@ -3,10 +3,12 @@ import { IUsuario } from "../../interfaces/IUsuario"
 import { Endereco } from "../enderecos/endereco"
 import { ContaCorrente } from "../contas/contaCorrente"
 import { ContaPoupanca } from "../contas/contaPoupanca"
+import { Conta } from "../contas/conta"
 
 export class Cliente extends Pessoa implements IUsuario {
-    private contaCorrente: ContaCorrente | null = null
-    private contaPoupanca: ContaPoupanca | null = null
+    // private contaCorrente: ContaCorrente | null = null
+    // private contaPoupanca: ContaPoupanca | null = null
+    conta: Conta | null = null
 
     constructor(
          cpf: string,
@@ -18,22 +20,15 @@ export class Cliente extends Pessoa implements IUsuario {
         super(cpf, nome, telefone, endereco)
     }
 
-    setContaCorrente(numero: string, limite: number): void{
-        this.contaCorrente = new ContaCorrente(numero, limite)
-    }
 
-    setContaPoupance(numero: string):void{
-        this.contaPoupanca = new ContaPoupanca(numero)
-    }
 
-    getContaCorrente(): ContaCorrente | null{
-        return this.contaCorrente
-    }
+    // getContaCorrente(): ContaCorrente | null{
+    //     return this.contaCorrente
+    // }
 
-    getContaPoupanca(): ContaPoupanca | null {
-        return this.contaPoupanca
-    }
-
+    // getContaPoupanca(): ContaPoupanca | null {
+    //     return this.contaPoupanca
+    // }
 
     autenticar(): true  {
         this.vip = true

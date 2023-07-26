@@ -1,10 +1,12 @@
-import { Conta } from "./conta"
+import { Conta } from "./conta";
 
-export class ContaPoupanca extends Conta{
-
-    constructor(numero: string){
-        super(numero)
+export class ContaPoupanca extends Conta {
+    constructor(limite: number) {
+      super();
+      this.limite = limite;
     }
-
-    calcularSaldo():void{} // Retorna a soma de todos os créditos - soma de todos os débitos
-}
+  
+    transferir(contaDestino: Conta, valor: number): void {
+      console.log("Operação não permitida para Conta Poupança.");
+    }
+  }
