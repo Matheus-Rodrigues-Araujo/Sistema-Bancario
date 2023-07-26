@@ -10,10 +10,6 @@ export abstract class Conta {
     protected creditos: Credito[] = [],
     protected debitos: Debito[] = [],
   ){}
-    // protected saldo: number = 0;
-    // protected limite: number = 0;
-    // protected creditos: Credito[] = [];
-    // protected debitos: Debito[] = [];
   
     depositar(valor: number): void {
       const credito = new Credito(valor, new Date());
@@ -34,8 +30,8 @@ export abstract class Conta {
     abstract transferir(contaDestino: Conta, valor: number): void;
   
     calcularSaldo(): number {
-      const somaCreditos = this.creditos.reduce((acc, credito) => acc + credito.valor, 0);
-      const somaDebitos = this.debitos.reduce((acc, debito) => acc + debito.valor, 0);
+      const somaCreditos = this.creditos.reduce((v, credito) => v + credito.valor, 0);
+      const somaDebitos = this.debitos.reduce((v, debito) => v + debito.valor, 0);
       return somaCreditos - somaDebitos + this.limite;
     }
   }
