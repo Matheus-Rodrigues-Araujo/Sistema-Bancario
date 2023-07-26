@@ -11,6 +11,14 @@ export abstract class Conta {
     protected debitos: Debito[] = [],
   ){}
   
+    get valorLimite():string{
+      return  'Limite atual: R$' + this.limite
+    }
+
+    set valorLimite(valor: number){
+      this.limite = valor
+    }
+
     depositar(valor: number): void {
       const credito = new Credito(valor, new Date());
       this.creditos.push(credito);
