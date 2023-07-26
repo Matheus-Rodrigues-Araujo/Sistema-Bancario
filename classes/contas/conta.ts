@@ -2,10 +2,18 @@ import { Credito } from "./credito"
 import { Debito } from "./debito";
 
 export abstract class Conta {
-    protected saldo: number = 0;
-    protected limite: number = 0;
-    protected creditos: Credito[] = [];
-    protected debitos: Debito[] = [];
+  private data = new Date().toDateString()
+
+  constructor(
+    protected saldo: number = 0,
+    protected limite: number = 0,
+    protected creditos: Credito[] = [],
+    protected debitos: Debito[] = [],
+  ){}
+    // protected saldo: number = 0;
+    // protected limite: number = 0;
+    // protected creditos: Credito[] = [];
+    // protected debitos: Debito[] = [];
   
     depositar(valor: number): void {
       const credito = new Credito(valor, new Date());

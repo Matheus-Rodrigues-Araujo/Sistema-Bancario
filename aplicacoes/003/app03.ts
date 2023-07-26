@@ -1,7 +1,8 @@
 import { Cliente } from "../../classes/pessoas/cliente";
 import { Endereco } from "../../classes/enderecos/endereco";
 import { ContaCorrente } from "../../classes/contas/contaCorrente";
-const c1_endereco1 = new Endereco('63123-123', 'R. Teopisto Abath', '393', 'Casa', 'Crato', 'CE')
+const c1_endereco1 = new Endereco('63123-123', 'R. Fulano de tal', '001', 'Casa', 'Crato', 'CE')
+
 const cliente1 = new Cliente(
     '45698723109',
     'Barry Allen',

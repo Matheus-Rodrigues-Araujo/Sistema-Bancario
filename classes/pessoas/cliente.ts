@@ -6,8 +6,6 @@ import { ContaPoupanca } from "../contas/contaPoupanca"
 import { Conta } from "../contas/conta"
 
 export class Cliente extends Pessoa implements IUsuario {
-    // private contaCorrente: ContaCorrente | null = null
-    // private contaPoupanca: ContaPoupanca | null = null
     conta: Conta | null = null
 
     constructor(
@@ -19,16 +17,6 @@ export class Cliente extends Pessoa implements IUsuario {
     ){
         super(cpf, nome, telefone, endereco)
     }
-
-
-
-    // getContaCorrente(): ContaCorrente | null{
-    //     return this.contaCorrente
-    // }
-
-    // getContaPoupanca(): ContaPoupanca | null {
-    //     return this.contaPoupanca
-    // }
 
     autenticar(): true  {
         this.vip = true

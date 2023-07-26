@@ -8,10 +8,10 @@ export class ContaCorrente extends Conta {
   
     transferir(contaDestino: Conta, valor: number): void {
       if (this.saldo + this.limite >= valor) {
-        this.sacar(valor);
+        this.sacar(valor) 
         contaDestino.depositar(valor);
       } else {
-        console.log("Saldo insuficiente para transferência.");
+        console.log("Eita, o saldo é insuficiente para transferência!");
       }
     }
   }
