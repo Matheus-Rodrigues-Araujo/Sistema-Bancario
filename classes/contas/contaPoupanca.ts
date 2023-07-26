@@ -2,7 +2,7 @@ import { Conta } from "./conta"
 
 export class ContaPoupanca extends Conta{
 
-    constructor(numero: string,private limite: number){
+    constructor(numero: string){
         super(numero)
     }
 

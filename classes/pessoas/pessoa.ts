@@ -1,7 +1,7 @@
 import { Endereco } from "../enderecos/endereco"
 
 export abstract class Pessoa {
-    enderecos : Endereco[] = []
+    listaEnderecos : Endereco[] = []
 
     constructor(
         private cpf: string,
@@ -9,15 +9,15 @@ export abstract class Pessoa {
         private telefone: string,
         private endereco: Endereco
     ){
-        this.enderecos.push(this.endereco)
+        this.listaEnderecos.push(this.endereco)
     }
 
     adicionarEndereco(endereco: Endereco){
-        this.enderecos.push(endereco)
+        this.listaEnderecos.push(endereco)
     }
 
     exibirEnderecos(){
-        return this.enderecos
+        return this.listaEnderecos
     }
 
 }

@@ -1,5 +1,7 @@
 export abstract class Conta {
-    constructor(protected numero: string){}
+    constructor(
+        private numero: string
+    ){}
 
     protected depositar():void{}
     protected sacar():void{}

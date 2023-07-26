@@ -1,10 +1,13 @@
 import { Pessoa } from "./pessoa"
 import { IUsuario } from "../../interfaces/IUsuario"
 import { Endereco } from "../enderecos/endereco"
+import { ContaCorrente } from "../contas/contaCorrente"
+import { ContaPoupanca } from "../contas/contaPoupanca"
 
 export class Cliente extends Pessoa implements IUsuario {
-    // enderecos: Endereco[] = []
-    
+    private contaCorrente: ContaCorrente | null = null
+    private contaPoupanca: ContaPoupanca | null = null
+
     constructor(
          cpf: string,
          nome: string,
@@ -15,17 +18,27 @@ export class Cliente extends Pessoa implements IUsuario {
         super(cpf, nome, telefone, endereco)
     }
 
+    setContaCorrente(numero: string, limite: number): void{
+        this.contaCorrente = new ContaCorrente(numero, limite)
+    }
+
+    setContaPoupance(numero: string):void{
+        this.contaPoupanca = new ContaPoupanca(numero)
+    }
+
+    getContaCorrente(): ContaCorrente | null{
+        return this.contaCorrente
+    }
+
+    getContaPoupanca(): ContaPoupanca | null {
+        return this.contaPoupanca
+    }
+
+
     autenticar(): true  {
         this.vip = true
         return this.vip
     }
 
 }
-
-const c1_endereco1 = new Endereco('63123-123', 'R. Teopisto Abath', '393', 'Casa', 'Crato', 'CE')
-const c1_endereco2 = new Endereco('60002-198', 'R. Sao Miguel', '03', 'Ap', 'Crato', 'CE')
-const cliente1 = new Cliente('123.456.789-12','Eduardo Ferreira', '(88) 91234-7890', c1_endereco1, false )
-
-cliente1.adicionarEndereco(c1_endereco2)
-// cliente1.autenticar()
-console.log(cliente1)
+    
