@@ -20,4 +20,22 @@ export abstract class Pessoa {
         return this.listaEnderecos
     }
 
+    // Nome da Pessoa
+    set nomeDaPessoa(valor: string){
+        this.nome = valor
+    }
+
+    get nomeDaPessoa(): string{
+        return this.nome
+    }
+
+    // Telefone
+    set telefoneAtual(valor: string){
+        this.telefone = valor
+    }
+
+    get telefoneAtual(): string{
+        return this.telefone
+    }
+
 }
